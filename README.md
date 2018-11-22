@@ -1,6 +1,6 @@
 # comp-120-tinkering-audio
 
-Contract 3: Melody Generation is completed
+# Contract 3: Melody Generation is completed
   this was assigned to Adrian Rodriguez
  
 Run main.py
