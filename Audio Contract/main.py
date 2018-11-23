@@ -24,22 +24,27 @@ Duration of each note
 '''
 duration_secs = 1/8
 
-
 '''
 -------------------------------------------------------------------------------
 Randomly Selects 5 Notes
 -------------------------------------------------------------------------------
 '''
-
+# Creates alist of the NoteFreqDict
 keys = list(NoteFreqDict.NoteFreqDict.values())
 keys.sort()
 print(type(NoteFreqDict.NoteFreqDict))
+
+# Randomly picks a starting note for the melody
 starting_note = random.choice(list(NoteFreqDict.NoteFreqDict.values()))
 print(starting_note)
 current_pos = keys.index(starting_note)
+
+# Checks item in the list of frequecies.
+# Randomly chooses the item before or same or after.
+# If the item is out of range of the list, we move double the distance in
+# the other direction.
+
 next_pos = current_pos + random.randint(-1,1)
-
-
 if next_pos < 0 or next_pos < len(keys):
     second_note = keys[next_pos]
 else :
@@ -83,10 +88,14 @@ print(fifth_note)
 Plays the waveform out of the speakers
 -------------------------------------------------------------------------------
 '''
+
 each_sample_number = np.arange(duration_secs * sps )
-duration_secs = 1/8
+
+# Setting a volume factor (adjustable volume)
 vol_multiplier = float(0.8)
 
+# Calculates 5 waves: a, b, c, d, and e
+# then plays them one after the other, then the program stops
 
 a_waveform = np.sin(2 * np.pi * each_sample_number * starting_note / sps)
 attenuated_waveform_1 = a_waveform * vol_multiplier
