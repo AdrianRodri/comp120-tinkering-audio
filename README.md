@@ -1,9 +1,8 @@
 # comp-120-tinkering-audio
 
 # Contract 3: Melody Generation is completed
-  this was assigned to Adrian Rodriguez
+## this was assigned to Adrian Rodriguez
+### with verbal help from Paul
  
-Run main.py
+Run main.py and the program should work
 
-Note: not all of the other modules are actually functional, 
-      still attempting a clean up for the final submission
